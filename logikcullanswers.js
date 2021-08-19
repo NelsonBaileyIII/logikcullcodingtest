@@ -9,18 +9,20 @@ function permute(nums) {
         let temp2 = temp.splice(i, 1)// remove one element
         let sub = permute(temp);// get permutations of rest
         for (let j = 0; j < sub.length; j++) {
-            result.push(sub[j].concat(temp2));
+            result.push(sub[j]+= (temp2)); // add current element to each permutation
         } // add current permutation to result
         var res = result.sort();
         }// sort result
-    return res;// return all permutations  
+    return res;// return all permutations 
+    //concatenate all permutations
+
 }
 function count (string) {  
     var count = {}; // empty object
     string.split('').forEach(function(s) {
        count[s] ? count[s]++ : count[s] = 1;
     }); // iterate through string and count each letter
-    return count; // return object
+    return count;
   }
 
 console.log(permute(["aabb", "aaaa", "bbab"]));
