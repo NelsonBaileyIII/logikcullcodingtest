@@ -9,7 +9,7 @@ function permute(nums) {
         let temp2 = temp.splice(i, 1)// remove one element
         let sub = permute(temp);// get permutations of rest
         for (let j = 0; j < sub.length; j++) {
-            result.push(sub[j]+= (temp2)); // add current element to each permutation
+            result.push(sub[j]+= (temp2));
         } // add current permutation to result
         var res = result.sort();
         }// sort result
@@ -26,4 +26,10 @@ function count (string) {
   }
 
 console.log(permute(["aabb", "aaaa", "bbab"]));
+console.log(permute(["xxbxx", "xbx", "x"]));
+console.log(permute(["dd", "bb", "cc", "dd"]));
+
+
 console.log(count("aaaaaabbbbab"));
+console.log(count("xxbxxxxbx"));
+console.log(count("ddddbbcc"));
